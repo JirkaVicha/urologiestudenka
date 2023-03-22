@@ -63,7 +63,7 @@
                         </tbody>
                     </table>
 					<br/>
-					<strong>Ke každému vyšetření je nutné se předem objednat!</strong>
+					<strong>Ke každému vyšetření je nutné se předem TELEFONICKY objednat!</strong>
                     <h3>Telefon</h3>
                     <h4>tel: 605 880 937</h4>
                     <h3>Email</h3>

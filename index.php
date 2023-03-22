@@ -68,7 +68,7 @@
                         </tbody>
                     </table>
 					<br/>
-					<strong>Ke každému vyšetření je nutné se předem objednat!</strong>
+					<strong>Ke každému vyšetření je nutné se předem TELEFONICKY objednat!</strong>
                     <h3>Telefon</h3>
                     <h4>tel: 605 880 937</h4>
                     <h3>Email</h3>
@@ -80,7 +80,8 @@
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>©2023 Urologie MUDr. Sobková Lenka</h3>
+                <h3>©2023 Urologie MUDr. Sobková Lenka
+                <span class="login"><a href="login.php">Login</a></span></h3>
             </footer>
         </div>
 
