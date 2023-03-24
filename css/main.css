@@ -64,6 +64,16 @@ input[type=text], [type=password] {
   box-sizing: border-box;
 }
 
+input[type=message] {
+  width: 100%;
+  padding: 14px, 20px;
+  margin: 8px, 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input[type=submit] {
   width: 50%;
   background-color: #4CAF50;
@@ -83,6 +93,31 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+.table-posts {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-posts td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.table-posts .cell-highlight {
+  background-color: #45a049;
+  color: white;
+}
+
+.table-posts button {
+  background-color: #da2f35;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 
@@ -190,6 +225,10 @@ nav a:hover {
 
 a {
   color: #c8c8ff;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 html {

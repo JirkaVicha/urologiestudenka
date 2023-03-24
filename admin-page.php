@@ -1,4 +1,17 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+  header('Location: login.php');
+  exit;
+}
+
+include 'process-admin.php';
+$post = new Post();
+$post->insertPost();
+$post->deletePost();
+$posts = $post->showPost();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,10 +19,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogIn</title>
-  <link rel="stylesheet" href="css/normalize.min.css">
+  <title>Admin page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  
 </head>
 <body>
 
@@ -30,15 +43,30 @@
   <div class="main wrapper clearfix">
 
     <article>
-      <div class="login-form">
-      <h4>Prihlasit se pro vlozeni aktuality pro klienty:</h4>
-      <!--Form for login to the admin page-->
-      <form action="process-login.php" method="post">
-        <input type="text" name="username" placeholder="Jmeno" required>
-        <input type="password" name="password" placeholder="Heslo" required>
-        <input type="submit" name="submit" value="Login">
+      <div class="admin-form">
+      <h4>Zprava pro klienty:</h4>
+      <!--Form for inserting messages to the clients-->
+      <form action="" method="post">
+        <textarea id="post" name="post" rows="5" cols="40" placeholder="Zadejte zpravu..." required></textarea>
+        <input type="submit" name="insert" value="Vlozit">
       </form>
-      </div>              
+      </div>
+
+      <!--Tady bude mozne posty mazat-->
+      <div class="posts" action="">
+      <?php foreach ($posts as $post): ?>
+       <form method="post">
+          <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
+            <table class="table-posts">
+                <tr>
+                    <td><?= date('d.m.Y', strtotime($post['created_at'])); ?></td>
+                    <td><?= $post['message']; ?></td>
+                    <td><button type="submit" name="delete" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                </tr>
+            </table>
+          </form>
+        <?php endforeach; ?>
+      </div>
                 
     </article>
                 
@@ -82,8 +110,7 @@
 
       <div class="footer-container">
         <footer class="wrapper">
-          <h3>©2023 Urologie MUDr. Sobková Lenka
-          <span class="login"><a href="login.php">Login</a></span></h3>
+          <h3>©2023 Urologie MUDr. Sobková Lenka <span class="login"><a href="index.php">Uvodni stranka</a></span></h3>
         </footer>
       </div>
 
