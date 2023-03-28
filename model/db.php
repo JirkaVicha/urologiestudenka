@@ -1,10 +1,10 @@
 <?php
 
 class Database {
-  private static $db_server = 'localhost';
-  private static $username = 'root';
-  private static $password = '';
-  private static $db_name = 'urology';
+  private static $db_server = 'localhost'; //sql4.webzdarma.cz
+  private static $username = 'root'; // urologiestud8658
+  private static $password = ''; // Hsls.3327
+  private static $db_name = 'urology'; // urologiestud8658
 
   public static function connect() {
     $db = new mysqli(self::$db_server, self::$username, self::$password, self::$db_name);

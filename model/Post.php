@@ -38,7 +38,7 @@ class Post {
       $stmt->bind_param('s', $this->post);
       $stmt->execute();
       self::$db->close();
-      header('Location: index.php');
+      header('Location: ../views/home.php');
       exit;
       }
     }
