@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
   session_start();
 
-  if ($username == 'admin' && $password == 'admin') {
+  if ($username == '*****' && $password == '*****') {
     $_SESSION['loggedin'] = true;
     header('Location: admin-page.php');
     exit;
