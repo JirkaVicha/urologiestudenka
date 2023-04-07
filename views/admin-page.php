@@ -15,11 +15,11 @@ $posts = $post->showPost();
 
 $content = '
       <div class="admin-form">
-      <h4>Zprava pro klienty:</h4>
+      <h4>Zpráva pro klienty:</h4>
       <!--Form for inserting messages to the clients-->
       <form action="" method="post">
-        <textarea id="post" name="post" autofocus="autofocus" rows="8" cols="40" placeholder="Zadejte zpravu..." required></textarea>
-        <input type="submit" name="insert" value="Vlozit">
+        <textarea id="post" name="post" autofocus="autofocus" rows="8" cols="40" placeholder="Zadejte zprávu..." required></textarea>
+        <input type="submit" name="insert" value="Vložit">
       </form>
       </div>
 
