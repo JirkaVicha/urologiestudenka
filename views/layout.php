@@ -16,7 +16,7 @@
    <h1 class="title">Urologická ambulance<br /><span style="font-size: 0.6em;">MUDr. Sobková Lenka</span></h1>
     <nav>
      <ul>
-      <li><a href="https://urologiestudenka.cz/views/home.php">Hlavni stranka</a></li>
+      <li><a href="https://urologiestudenka.cz/views/home.php">Hlavní stránka</a></li>
       <li><a href="https://urologiestudenka.cz/views/naseordinace.php">Naše ordinace</a></li>
      </ul>
     </nav>
@@ -33,28 +33,7 @@
 
     <aside>
     <h3>Ordinační hodiny</h3>
-    <table>
-        <tbody>
-        <tr>
-            <td><strong>Pondělí</strong></td>
-            <td>&nbsp; &nbsp; 8:00</td>
-            <td> - 12:00</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><strong>Středa</strong></td>
-            <td>&nbsp; 15:00</td>
-            <td> - 17:00</td>
-            <td>&nbsp;</td>
-        </tr>
-
-        <tr>
-            <td><strong>Pátek</strong></td>
-            <td>&nbsp; &nbsp; 8:00</td>
-            <td> - 12:00</td>
-            <td></td>
-        </tr>
-        </tbody>
+        <?php echo $time; ?>
     </table>
     <br/>
     <strong>Ke každému vyšetření je nutné se předem TELEFONICKY objednat!</strong>

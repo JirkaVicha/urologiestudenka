@@ -1,5 +1,6 @@
 <?php
 
+include 'process-time.php';
 include '../model/Post.php';
 $post = new Post();
 $posts = $post->showPost();
@@ -26,6 +27,33 @@ $content = '
          $content .= '
         </div>
     </div>
+';
+
+$time = '
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Pondělí</strong></td>
+      <td>&nbsp; &nbsp; ' . $monday_start . ':00</td>
+      <td> - ' . $monday_end . ':00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Středa</strong></td>
+      <td>&nbsp; ' . $wednesday_start . ':00</td>
+      <td> - ' . $wednesday_end . ':00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Pátek</strong></td>
+      <td>&nbsp; &nbsp; ' . $friday_start . ':00</td>
+      <td> - ' . $friday_end . ':00</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 ';
 
 include 'layout.php';

@@ -6,6 +6,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   exit;
 }
 
+include 'process-time.php';
 include '../model/Post.php';
 $post = new Post();
 $post->insertPost();
@@ -42,6 +43,35 @@ $content = '
        $content .= '
       </div>
 ';
+
+$time = '
+<form method="post">
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Pondělí</strong></td>
+        <td><input type="text" class="text-center" name="monday_start" value="' . $monday_start . '"></td>
+        <td><input type="text" class="text-center" name="monday_end" value="' . $monday_end . '"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Středa</strong></td>
+        <td><input type="text" class="text-center" name="wednesday_start" value="' . $wednesday_start . '"></td>
+        <td><input type="text" class="text-center" name="wednesday_end" value="' . $wednesday_end . '"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Pátek</strong></td>
+        <td><input type="text" class="text-center" name="friday_start" value="' . $friday_start . '"></td>
+        <td><input type="text" class="text-center" name="friday_end" value="' . $friday_end . '"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="submit" name="vlozit" value="Vložit">
+</form>
+';
+
 
 include 'layout.php';
 ?>
