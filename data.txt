@@ -1,0 +1,6 @@
+monday_start=10
+monday_end=12
+wednesday_start=15
+wednesday_end=17
+friday_start=8
+friday_end=12
